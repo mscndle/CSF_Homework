@@ -11,8 +11,6 @@ import java.util.InputMismatchException;
  * Contains the main class that uses the Reservation framework
  */
 public class User {
-    //TODO: Fix error with duplicate reservation
-    //TODO: Implement bonus requirement for 10 seats for in person reservation
     //TODO: Write Junit tests
 
     public static void main(String[] args) {
