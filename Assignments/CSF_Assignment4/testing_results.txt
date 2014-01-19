@@ -1,0 +1,21 @@
+
+***** TESTING *****
+Item loan for War and Peace written by Leo Tolstoy granted to mandy
+Item loan for Make issue# 4 granted to ranga
+Item loan for Pulp Fiction directed by Quentin Tarantino granted to ranga
+Item loan for Pulp Fiction directed by Quentin Tarantino declined to mandy
+Item Pulp Fiction directed by Quentin Tarantino successfully returned by ranga
+Item loan for Pulp Fiction directed by Quentin Tarantino granted to mandy
+Item loan for Make issue# 4 declined to mandy
+Item Make issue# 4 successfully returned by ranga
+Item loan for Make issue# 4 granted to mandy
+Item War and Peace written by Leo Tolstoy successfully returned by mandy
+Item loan for War and Peace written by Leo Tolstoy granted to ranga
+
+Collection details for mandy
+Pulp Fiction directed by Quentin Tarantino due on 2014-01-20T20:31:11.211-05:00
+Make issue# 4 due on 2014-01-25T20:31:11.211-05:00
+
+Collection details for ranga
+War and Peace written by Leo Tolstoy due on 2014-01-23T20:31:11.211-05:00
+*****   END  *****
