@@ -94,10 +94,14 @@ public class NGramTextGenerator {
                 tempList = ngrams.get(words);
                 int rand = random.nextInt(tempList.size());
 
-                stringWriter.append(tempList.get(rand) + " ");
+                String randStr = tempList.get(rand);
+                stringWriter.append(randStr + " ");
 
+                words.set(0, words.get(1));
+                words.set(1, randStr);
+            } else {
+                words = this.randomNGram();
             }
-            words = this.randomNGram();
         }
 
         return stringWriter.toString();
