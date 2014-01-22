@@ -66,7 +66,12 @@ public class NGramTextGenerator {
      */
     public String randomText() {
         // Start with random seed text
-        LinkedList<String> words = this.randomNGram();
+        //LinkedList<String> words = this.randomNGram();
+
+        /*  BONUS - starting ngram with the first ngram in the map  */
+        //Technically not my own solution, saw the keySet().toArray() trick on stack overflow
+        LinkedList<String> words = (LinkedList<String>) this.ngrams.keySet().toArray()[0];
+
         StringWriter stringWriter = new StringWriter(this.OUTPUT_WORD_COUNT);
         stringWriter.append(ngramStringRepresentation(words));
 
@@ -81,7 +86,20 @@ public class NGramTextGenerator {
             // Bonus opportunities (that will require changes to be made outside of this method):
             // * Instead of starting your text with a random ngram, instead start with the first ngram in the sample text you were given.
             // * Make output word length, ngram length user-settable parameters
+
+            ArrayList<String> tempList;   //temp arraylist for key(word) value in map
+            Random random = new Random();
+
+            if (ngrams.containsKey(words)) {
+                tempList = ngrams.get(words);
+                int rand = random.nextInt(tempList.size());
+
+                stringWriter.append(tempList.get(rand) + " ");
+
+            }
+            words = this.randomNGram();
         }
+
         return stringWriter.toString();
     }
 
