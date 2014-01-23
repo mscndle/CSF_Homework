@@ -28,7 +28,21 @@ public class SimpleHashMap {
         // * Insert the key/value tuple in the linked list at the desired index in the data store
         // * If something in that spot already exists, add it at the end of the linked list
         // * Return the value
-        return null;
+        //return null;
+
+        // Sample soln
+        int arrayIndex = this.indexForKey(key);
+
+        if (this.dataStore[arrayIndex] == null) {
+            this.dataStore[arrayIndex] = new KeyValueList();
+        }
+
+        KeyValueTuple tuple = new KeyValueTuple();
+        tuple.value = value;
+        tuple.key = key;
+        this.dataStore[arrayIndex].values.addLast(tuple);
+
+        return value;
     }
 
     public Object get(String key) {
@@ -36,7 +50,23 @@ public class SimpleHashMap {
         // * Get the hash value of the key
         // * Look for the desired key in the LinkedList at the appropriate index
         // * Return the value
-        return null;
+        //return null;
+
+        // INSTRUCTOR TODO: Sample soln, remove
+        int arrayIndex = this.indexForKey(key);
+        KeyValueList list = this.dataStore[arrayIndex];
+        Object value = null;
+
+        if (list != null) {
+            for (KeyValueTuple tuple : list.values) {
+                if (tuple.key.equals(key)) {
+                    value = tuple.value;
+                    break;
+                }
+            }
+        }
+
+        return value;
     }
 
     public Object remove(String key) {
@@ -44,7 +74,27 @@ public class SimpleHashMap {
         // * Get the hash value of the key
         // * Remove the key/value tuple in the linked list at the appropriate index in the data store
         // * Return the value
-        return null;
+        //return null;
+
+        // INSTRUCTOR TODO: Sample soln, remove
+        int arrayIndex = this.indexForKey(key);
+        KeyValueList list = this.dataStore[arrayIndex];
+        Object value = null;
+        if (list != null) {
+            for (KeyValueTuple tuple : list.values) {
+                if (tuple.key.equals(key)) {
+                    value = tuple.value;
+                    list.values.remove(tuple);
+                }
+            }
+        }
+
+        return value;
+    }
+
+    // Instructor TODO: Sample soln, remove
+    private int indexForKey(String key) {
+        return Math.abs(key.hashCode()) % this.dataStore.length;
     }
 
     /*
